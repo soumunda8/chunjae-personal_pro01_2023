@@ -39,3 +39,15 @@
 <link rel="stylesheet" href="<%=path %>/css/all.css">
 
 <script src="<%=path %>/js/jquery-latest.js"></script>
+
+<link rel="stylesheet" href="<%=path %>/css/jquery.dataTables.css">
+<script src="<%=path %>/js/jquery.dataTables.js"></script>
+
+<!-- 불펌 방지 -->
+<%--
+<script>
+    document.oncontextmenu = function() { return false; }
+    document.ondragstart = function() { return false; }
+    document.onselectstart = function() { return false; }
+</script>
+--%>

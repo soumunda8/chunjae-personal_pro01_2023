@@ -21,13 +21,7 @@
             out.println("<a href='" + request.getContextPath() + "/member/idCheck.jsp?id="+id+"'>아이디 중복 혹은 글자수 제한</a>");
         } else {
             out.println("<p>사용 가능한 아이디</p>");
-            out.println("<script>");
-            out.println("window.opener.handleIdCheckCompletion(\""+id+"\");");
-            out.println("opener.document.getElementById('myForm').getElementById('id').value = " + id + ";");
-            out.println("opener.document.getElementById('myForm').getElementById('ckItem').value = 'yes';");
-            out.println("</script>");
-            out.println("<button type='button' onclick='fnc1()'>"+"사용하기"+"</button>");
-            out.println("<button type='button' onclick='fnc2()'>"+"수정하기"+"</button>");
+            out.println("<button type='button' onclick=\"fnc1('" + id + "')\">아이디 사용하기</button>");
         }
 
     } catch(SQLException e) {
@@ -37,14 +31,10 @@
     }
 %>
 <script>
-    function fnc1(){
-        /*
+    function fnc1(cid) {
         opener.document.frm1.id.value = cid;
-        opener.document.frm1.ck_item.value = "yes";
-        */
+        opener.document.frm1.id.readOnly=true;
+        opener.document.frm1.ckItem.value = "yes";
         window.close();
-    }
-    function fnc2(){
-        window.history.go(-1);
     }
 </script>

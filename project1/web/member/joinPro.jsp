@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.plusnplus.db.*" %>
-<%@ page import="com.plusnplus.dto.*" %>
 <%@ page import="com.plusnplus.util.*" %>
 <%@ include file="/layout/encoding.jsp"%>
 <%
@@ -11,34 +10,37 @@
     String tel = request.getParameter("tel");
     String email = request.getParameter("email");
 
-
     pw = AES256.sha256(pw);
 
     Connection conn = null;
     PreparedStatement pstmt = null;
-    ResultSet rs = null;
-
-    Member mem = new Member();
 
     DBC con = new MariaDBCon();
     conn = con.connect();
 
     try {
-        String sql = "select * from member where id = ? and pw = ?";
+        String sql = "INSERT INTO MEMBER(id, pw, NAME, email, tel) VALUES(?, ?, ?, ?, ?)";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, id);
         pstmt.setString(2, pw);
-        rs = pstmt.executeQuery();
-        if(rs.next()) {
-            session.setAttribute("sid", rs.getString("id"));
-            response.sendRedirect(request.getContextPath() + "/");
+        pstmt.setString(3, name);
+        pstmt.setString(4, email);
+        pstmt.setString(5, tel);
+        int cnt = pstmt.executeUpdate();
+        if(cnt > 0) {
+            response.sendRedirect(request.getContextPath() + "/member/joinFinish.jsp");
         } else {
-            response.sendRedirect(request.getContextPath() + "/member/login.jsp?errMsg=fail");
+            String scriptStr = "";
+            scriptStr = "<script>";
+            scriptStr += "alert('회원가입이 잘못되었습니다.');";
+            scriptStr += "history.go(-1);";
+            scriptStr += "</script>";
+            out.println(scriptStr);
         }
     } catch (SQLException e) {
         throw new RuntimeException(e);
     } finally {
-        con.close(rs, pstmt, conn);
+        con.close(pstmt, conn);
     }
 
 %>

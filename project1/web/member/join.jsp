@@ -21,17 +21,16 @@
               <li class="on"><i>2</i>기본정보입력</li>
               <li><i>3</i>회원가입완료</li>
           </ul>
-          <form  name="frm1" id="myForm" action="<%=path %>/member/joinPro.jsp" method="post">
+          <form action="<%=path %>/member/joinPro.jsp" name="frm1" id="loginFrm" class="frm" onsubmit="return inform(this)">
               <fieldset>
                   <legend class="blind">기본정보입력</legend>
-                  <!-- form_list_m -->
                   <div class="form_list_m">
                       <dl>
                           <dt>아이디 <i class="fas fa-asterisk"></i></dt>
                           <dd class="btn">
                               <input type="text" name="id" id="id" class="inData" placeholder="아이디를 입력해주세요." title="아이디" required>
-                              <button type="button" id="ckBtn" class="inBtn inBtn1" onclick="idcheck()">아이디 중복체크</button>
-                              <input type="hidden" name="ck_item" id="ckItem" value="no">
+                              <button type="button" id="ckBtn" class="inBtn inBtn1" onclick="idCheck()">아이디 중복체크</button>
+                              <input type="hidden" name="ckItem" id="ckItem" value="no">
                           </dd>
                       </dl>
                       <dl>
@@ -64,40 +63,42 @@
                       </dl>
                   </div>
                   <div class="btn_group">
-                      <button type="button" class="inBtn inBtn1" onclick="inform();">회원가입</button>
+                      <button type="submit" class="inBtn inBtn1">회원가입</button>
                   </div>
               </fieldset>
           </form>
           <script>
-          function inform(){
+          function inform(frm){
 
-              var ck_item = document.getElementById("ckItem");
-              if(ck_item.value != "yes"){
-                  alert("아이디 중복 검사를 진행하시기 바랍니다.");
-                  document.getElementById("id").focus();
-                  return false;
+              var resultFlag = true;
+
+              var ckItem = frm.ckItem.value;
+              if(ckItem != "yes") {
+                  alert("아이디 중복 검사를진행하시기 바랍니다.");
+                  frm.id.focus();
+                  resultFlag = false;
               }
 
-              var pw = document.getElementById("pw");
-              var pw2 = document.getElementById("rePw");
-              if(pw.value != pw2.value){
-                  alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
-                  document.getElementById("errMsg").classList.add("show");
-                  pw.focus();
-                  return false;
+              var pw = frm.pw.value;
+              var pw2 = frm.rePw.value;
+              if(pw != pw2) {
+                  alert("비밀번호와 비밀번호 확인이 서로 다릅니다.")
+                  frm.pw.focus();
+                  resultFlag = false;
               }
 
-              document.getElementById("myForm").submit();
+              return resultFlag;
+
           }
 
-          function idcheck(){
+          function idCheck() {
               var child;
               var id = document.getElementById("id");
-              if(id.value != "") {
-                  child = window.open("idCheck.jsp?id="+id.value, "child", "width=400, height=300");
+              if(id.value!="") {
+                  child = window.open("idCheck.jsp?id="+id.value, "child", "width=400,height=400");
                   return false;
               } else {
-                  alert("아이디 입력란에 아이디를 입력하고, 진행하시기 바랍니다.");
+                  alert("아이디 입력란에 아이디를 입려하고, 진행하시기 바랍니다.");
                   id.focus();
                   return false;
               }

@@ -15,20 +15,18 @@
 </style>
 <body>
 <div class="container">
-    <form name="child" id="idCheckForm" action="<%=path %>/member/idLoad.jsp" method="post">
+    <form action="<%=path %>/member/idLoad.jsp" method="post" name="child" onsubmit="return invalidCheck(this)">
         <label for="id">아이디</label>
-        <input type="text" name="id" id="id" value="<%=id %>" placeholder="12글자 이내">
-        <input type="button" value="아이디 중복 검사"  onclick="invalidCheck()">
-
+        <input type="text" name="id" id="id" value="<%=id %>" placeholder="15글자 이내">
+        <input type="submit" value="아이디중복검사">
     </form>
     <script>
-        function invalidCheck(){
-            var id = document.getElementById("id").value;
-            if(id.length > 12){
-                alert("아이디의 글자수는 16글자 이내입니다.");
-                return false;
+        function invalidCheck(f) {
+            var id = f.id.value;
+            if(id.length > 15) {
+                alert("아이디가 15글자를 초과했습니다.");
+                f.id.focus();
             }
-            document.getElementById("idCheckForm").submit();
         }
     </script>
 </div>
