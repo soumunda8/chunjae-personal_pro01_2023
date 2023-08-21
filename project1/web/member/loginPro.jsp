@@ -7,29 +7,37 @@
 <%
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
-    pw = AES256.sha256(pw);
 
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
-
-    Member mem = new Member();
+    String sql = "";
+    String originPw = "";
 
     DBC con = new MariaDBCon();
     conn = con.connect();
 
     try {
-        String sql = "select * from member where id = ? and pw = ?";
+        sql = "select id, pw from member where id = ?";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, id);
-        pstmt.setString(2, pw);
         rs = pstmt.executeQuery();
         if(rs.next()) {
-            session.setAttribute("sid", rs.getString("id"));
-            response.sendRedirect(request.getContextPath() + "/");
+            originPw = AES256.decryptAES256(rs.getString("pw"), "%02x");
+
+            if(originPw.equals(pw)) {
+
+                session.setAttribute("sid", rs.getString("id"));
+                response.sendRedirect(request.getContextPath() + "/");
+
+            } else {
+                response.sendRedirect(request.getContextPath() + "/member/login.jsp?errMsg=fail");
+            }
+
         } else {
             response.sendRedirect(request.getContextPath() + "/member/login.jsp?errMsg=fail");
         }
+
     } catch (SQLException e) {
         throw new RuntimeException(e);
     } finally {

@@ -12,6 +12,8 @@
 
 .breadcrumb {text-align:left;color:#333;padding:30px 0;}
 
+#myTable_length, #dataTables_filter { margin-top:20px; margin-bottom:20px; }
+
 .content_wrap {margin:30px 0 60px;}
 .content_wrap h3 {text-align:center;font-size:32px;margin-bottom:60px;line-height:1.2;}
 .content_wrap h4, .h4 {position:relative;font-size:22px;padding-left:16px;line-height:1.2;margin:45px 0 10px;}
@@ -19,6 +21,33 @@
 
 /* company */
 #map {width:100%;height:600px;position:relative;margin:60px auto 0;overflow:hidden;background-color:#fff;border:1px solid #333;box-sizing:border-box;}
+
+/* board */
+.board_detail {width:100%;border-top:3px solid #333;box-sizing:border-box;border-bottom:1px solid #666;}
+.board_detail_top {background-color:rgba(6, 6, 6, 0.05);padding:10px 5px;}
+.board_detail_top > div {position:relative;padding-left:5px;}
+.board_detail_top .cnt, .board_detail_top .date {position:absolute;top:1px;right:5px;}
+.board_detail_top .detail_top1 {border-bottom:2px solid darkgrey;height:50px;}
+.board_detail_top .board_title {font-size:25px;font-weight:600;line-height:42px;width:calc(100% - 150px);display:block;}
+.board_detail_top .cnt {font-size:20px;top:10px;}
+.board_detail_top .writer {font-size:20px;margin:5px 0 0;width:calc(100% - 200px);display:block;}
+.board_detail_con {margin:20px 0;padding:0 10px;font-size:20px;line-height: 1.2;}
+
+/* 자유게시판 댓글 관련 */
+.comment_area {width:100%;margin-top:50px;}
+.comment_list > li {border-bottom:1px solid #333;box-sizing:border-box}
+.comment_list > li:first-child {border-top:1px solid #333;}
+.comment_list > li > div {position:relative;}
+.comment_list .comment_top {padding:5px 10px;height: 25px;}
+.comment_list .comment_writer {font-weight:500;font-size:14px;line-height:25px;}
+.comment_list .comment_date {font-weight:300;padding-left:20px;}
+.comment_list .comment_btn {position:absolute;right:10px;top:50%;padding:0 10px;height:30px;line-height:28px;}
+.comment_list .comment_con {padding:5px 10px;min-height:25px;width:calc(100% - 150px);}
+.comment_add {width:100%;position:relative;margin-top:50px;padding:5px 10px;box-sizing:border-box;}
+.comment_add textarea {width:calc(100% - 280px);min-height:50px;}
+.comment_add .comment_btn {width:250px;text-align:center;position:absolute;right:10px;top:5px;height:52px;line-height:52px;font-size:18px;font-weight:500;}
+.comment_area .comment_btn {display:block;border-radius:5px;box-sizing:border-box;cursor:pointer;}
+.no_comment {border-top:1px solid #333;padding-left:10px;font-size:20px;padding-top:10px;}
 
 /* cs_area */
 .cs_area p, .cs_area li {line-height:1.5;font-size:16px;word-break:keep-all;}
@@ -78,5 +107,10 @@
 .join_detail .btn #id {width:calc(100% - 160px);display:inline-block;vertical-align:middle;}
 .join_detail .btn #ckBtn {width:100px;display:inline-block;margin-left:16px;vertical-align:middle;font-size:16px;line-height:1.2;word-break:keep-all;padding:5px 10px;height:48px;}
 .join_detail #pw {margin-bottom:10px;}
+.join_detail #id:read-only {background-color:rgba(100, 149, 237, 0.4)}
 .join_content .finish01 {font-size:22px;text-align:center;word-break:keep-all;padding:20px 0;font-weight:800;}
 .join_content .finish02 {font-size:16px;text-align:center;word-break:keep-all;padding:0 0 20px;}
+.qna_answer {margin-top:40px;font-size:18px;box-sizing:border-box;border:1px solid var(--main-color);padding:20px 10px 0;}
+.qna_answer.no_answer {padding-bottom:20px;}
+.qna_answer .qna_info {position:relative;padding-bottom:20px;}
+.qna_answer .qna_info span {font-size:14px;line-height:18px;}

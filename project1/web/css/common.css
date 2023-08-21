@@ -10,7 +10,7 @@
 /* Reset Style */
 * {margin:0;padding:0;}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;font-family:'Noto Sans KR', sans-serif;color:#333;}
-body, html {overflow-x:hidden;-ms-overflow-style:none;scrollbar-width:none;}
+body, html {overflow-x:hidden;-ms-overflow-style:none;scrollbar-width:none;min-height:100vh;}
 body::-webkit-scrollbar, html::-webkit-scrollbar {display:none;}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
 body {line-height:1;}
@@ -25,6 +25,7 @@ table {border-collapse:collapse;border-spacing:0;}
 :root {
     --main-color:#c24856;
     --sub-color:#ffa300;
+    --admin-color:#530009;
 }
 .inner {width:1200px;margin:0 auto;position:relative;}
 .clearfix::after {display:block;content:'';clear:both;}
@@ -88,6 +89,7 @@ table {border-collapse:collapse;border-spacing:0;}
 .tb1 td {text-align:center;}
 .tb1 td.txtLeft {text-align:left;padding-left:15px;}
 .tb2 th {width:15%;}
+.tb2 th.txt_top {vertical-align:top;padding-top:20px;}
 .tb2 td {padding-left:15px;border-left:1px solid #333;}
 
 /* button */

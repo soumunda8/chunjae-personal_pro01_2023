@@ -25,7 +25,7 @@
                           <li><label for="id" class="blind">아이디</label><input type="text" id="id" name="id" class="inData" placeholder="아이디" title="아이디"></li>
                           <li><label for="pw" class="blind">비밀번호</label><input type="password" id="pw" name="pw" class="inData" placeholder="비밀번호" title="비밀번호"></li>
                           <% if(!errMsg.equals("")) { %>
-                          <li class="info" id="errMsg"><i class="fas fa-exclamation-circle"></i> <%=errMsg %></li>
+                          <li class="info show" id="errMsg"><i class="fas fa-exclamation-circle"></i> <%=errMsg %></li>
                           <% }%>
                       </ul>
                       <div class="btn_group">
