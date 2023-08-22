@@ -14,10 +14,6 @@ CREATE TABLE MEMBER(
 	PRIMARY KEY (id)
 );
 
-INSERT INTO MEMBER(id, pw, NAME, email, tel) VALUES('admin', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', '관리자', 'admin@playnplay.com', '010-1004-1004');
-
-SELECT* FROM member;
-
 -- 게시판(board) 테이블 생성
 CREATE TABLE board(
 	bno INT(11) PRIMARY KEY AUTO_INCREMENT,   -- (게시글 번호) 자동 발생
@@ -40,17 +36,17 @@ CREATE TABLE comment(
 	bno INT(11) NOT NULL   -- (해당 게시글 번호)
 );
 
-CREATE VIEW commentList AS (SELECT c.cno AS cno, c.author AS author, c.content AS content, c.resdate AS resdate, c.bno AS bno, m.name AS name FROM comment c, member m WHERE c.author=m.id order BY c.cno ASC);
-    
+CREATE VIEW commentlist AS (SELECT c.cno AS cno, c.author AS author, c.content AS content, c.resdate AS resdate, c.bno AS bno, m.name AS name FROM comment c, member m WHERE c.author=m.id order BY c.cno ASC);
+
 -- 문의(qna) 테이블 생성
 CREATE TABLE qna(
 	qno INT PRIMARY KEY AUTO_INCREMENT,   -- (문의번호) 자동발생
 	title VARCHAR(100) NOT NULL,   -- (문의 제목)
 	content VARCHAR(1000) NOT NULL,   -- (문의 내용)
-	answer VARCHAR(1000) NOT NULL,   -- (답변 내용)
-	author VARCHAR(16),   -- (문의 작성자)
+	answer VARCHAR(1000),   -- (답변 내용)
+	author VARCHAR(16) NOT NULL,   -- (문의 작성자)
 	resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),   -- (문의 등록일자)
-	answerdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),   -- (답변 등록일자)
+	answerdate TIMESTAMP,   -- (답변 등록일자)
 	answeryn BOOLEAN DEFAULT false -- 질문(0), 답변(1)
 );
 
