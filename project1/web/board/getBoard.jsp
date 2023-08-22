@@ -38,7 +38,11 @@
         rs.close();
         pstmt.close();
 
+<<<<<<< HEAD
         if(!writer.equals("admin") && !bd.getAuthor().equals(writer)) {
+=======
+        if(!bd.getAuthor().equals(writer)) {
+>>>>>>> origin/master
             // 조회수 증가 쿼리
             sql = "update board set cnt = cnt + 1 where bno = ?";
             pstmt = conn.prepareStatement(sql);
@@ -54,7 +58,11 @@
     } catch (SQLException e) {
         System.out.println("sql 구문 오류");
     } finally {
+<<<<<<< HEAD
         conn.close();
+=======
+        //conn.close();
+>>>>>>> origin/master
     }
 
 %>

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
-    String sid = session.getAttribute("sid")!=null ? (String) session.getAttribute("sid") : null;
+    String sid = session.getAttribute("id")!=null ? (String) session.getAttribute("id") : null;
 %>
 <div class="hd_wrap hd_top">
     <nav class="tnb inner">
@@ -47,16 +47,14 @@
                     <ul class="sub">
                         <li><a href="javascript:return false">정보처리기사</a></li>
                         <li><a href="javascript:return false">정보처리산업기사</a></li>
-                        <li><a href="<%=path %>/board/listBoard.jsp">자유게시판</a></li>
                     </ul>
                 </li>
                 <li class="item4">
-                    <a href="<%=path %>/board/listNotice.jsp" class="dp1">커뮤니티</a>
+                    <a href="javascript:return false" class="dp1">커뮤니티</a>
                     <ul class="sub">
-                        <li><a href="<%=path %>/board/listNotice.jsp">공지사항</a></li>
-                        <% if(sid != null && !sid.equals("admin")) { %>
-                        <li><a href="<%=path %>/qna/addQna.jsp">문의하기</a></li>
-                        <% } %>
+                        <li><a href="javascript:return false">공지사항</a></li>
+                        <li><a href="javascript:return false">자격증 신청 리스트</a></li>
+                        <li><a href="javascript:return false">문의하기</a></li>
                         <li><a href="javascript:return false">자주하는질문</a></li>
                     </ul>
                 </li>

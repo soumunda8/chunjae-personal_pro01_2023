@@ -9,8 +9,6 @@
     String content = request.getParameter("content");
     int bno = Integer.parseInt(request.getParameter("bno"));
 
-    System.out.println(author + ", " + content + ", " + bno);
-
     Connection conn = null;
     PreparedStatement pstmt = null;
 
