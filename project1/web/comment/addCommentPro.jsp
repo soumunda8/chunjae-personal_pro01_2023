@@ -24,7 +24,7 @@
         int cnt = pstmt.executeUpdate();
 
         if(cnt > 0){
-            response.sendRedirect(request.getContextPath() + "/board/getBoard.jsp?bno="+bno);
+            response.sendRedirect(request.getContextPath() + "/board/getBoard.jsp?bno="+bno+"&comment=change");
         } else {
             out.println("<script>alert('댓글 등록에 문제가 생겼습니다.');history.go(-1);</script>");
         }

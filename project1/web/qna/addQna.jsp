@@ -15,7 +15,7 @@
         <%@ include file="../layout/header.jsp" %>
     </header>
     <div class="contents">
-        <div class="sub_visual visual03">
+        <div class="sub_visual visual05">
             <div class="inner">
                 <h2>자격증</h2>
             </div>

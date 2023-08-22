@@ -19,7 +19,7 @@
           <%@ include file="/layout/header.jsp" %>
       </header>
       <div class="contents">
-          <div class="sub_visual visual02">
+          <div class="sub_visual visual01">
               <div class="inner">
                   <h2>소개</h2>
               </div>

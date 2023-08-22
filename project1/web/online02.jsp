@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>플러스앤플러스에듀::sample</title>
+    <title>플러스앤플러스에듀::KOCW</title>
     <%@ include file="/layout/head.jsp" %>
     <link rel="stylesheet" href="<%=path %>/css/sub.css">
   </head>
@@ -17,17 +17,20 @@
       <div class="contents">
           <div class="sub_visual visual02">
               <div class="inner">
-                  <h2>1차메뉴</h2>
+                  <h2>온라인교육</h2>
               </div>
           </div>
           <div class="inner">
               <div class="breadcrumb">
-                  <p><a href="<%=path %>/">HOME</a> &gt; <a href="javascript:return false">1차메뉴</a> &gt; <span>2차메뉴</span></p>
+                  <p><a href="<%=path %>/">HOME</a> &gt; <a href="<%=path %>/online01.jsp">온라인교육</a> &gt; <span>KOCW</span></p>
               </div>
               <div class="content_wrap">
-                  <h3>2차메뉴 명</h3>
-                  <div>
-                      sadlkfja;slkdjf;lasjd
+                  <h3>KOCW</h3>
+                  <div class="online">
+                      <img src="<%=path %>/image/sub/online02.png" alt="KOCW" />
+                      <div class="btn_group txt_center">
+                          <a href="http://www.kocw.net/home/index.do" title="KOCW" target="_blank" class="inBtn inBtn1">사이트 이동</a>
+                      </div>
                   </div>
               </div>
           </div>

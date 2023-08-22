@@ -53,7 +53,7 @@
         </div>
         <div class="inner">
             <div class="breadcrumb">
-                <p><a href="<%=path %>/"> HOME </a> &gt; <a href="javascript:return false"> 자격증 </a> &gt; <span> 자유게시판 </span></p>
+                <p><a href="<%=path %>/"> HOME </a> &gt; <a href="<%=path %>/license01.jsp"> 자격증 </a> &gt; <span> 자유게시판 </span></p>
             </div>
             <div class="content_wrap">
                 <h3>자유게시판 수정하기</h3>

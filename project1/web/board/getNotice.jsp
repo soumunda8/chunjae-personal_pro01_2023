@@ -38,11 +38,7 @@
         rs.close();
         pstmt.close();
 
-<<<<<<< HEAD
-        if(!bd.getAuthor().equals("admin") && !bd.getAuthor().equals(writer)) {
-=======
-        if(!bd.getAuthor().equals(writer)) {
->>>>>>> origin/master
+        if(!writer.equals("admin") && !bd.getAuthor().equals(writer)) {
             // 조회수 증가 쿼리
             sql = "update board set cnt = cnt + 1 where bno = ?";
             pstmt = conn.prepareStatement(sql);
@@ -75,7 +71,7 @@
         <%@ include file="../layout/header.jsp" %>
     </header>
     <div class="contents">
-        <div class="sub_visual visual03">
+        <div class="sub_visual visual04">
             <div class="inner">
                 <h2>커뮤니티</h2>
             </div>

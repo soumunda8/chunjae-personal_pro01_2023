@@ -71,7 +71,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <div class="btn_group">
+                <div class="btn_group txt_right">
                     <button type="submit" class="inBtn inBtn1">수정하기</button>
                     <a href="<%=adminPath %>/noticeGet.jsp?bno=<%=bno %>" class="inBtn inBtn2">취소하기</a>
                 </div>

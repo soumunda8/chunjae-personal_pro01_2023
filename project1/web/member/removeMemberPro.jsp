@@ -29,6 +29,7 @@
         if(rs.next()) {
 
             rs.close();
+            pstmt.close();
 
             try {
 
@@ -37,43 +38,43 @@
                 pstmt.setString(1, id);
                 cnt = pstmt.executeUpdate();
 
-                if(cnt > 0){
-
-                    pstmt.close();
-
-                    sql = "select count(*) as num from comment where author = ?";
-                    pstmt = conn.prepareStatement(sql);
-                    pstmt.setString(1, id);
-                    rs = pstmt.executeQuery();
-
-                    if(rs.next()) {
-
-                        rs.close();
-                        pstmt.close();
-
-                        sql = "delete from comment where author = ?";
-                        pstmt = conn.prepareStatement(sql);
-                        pstmt.setString(1, id);
-                        pstmt.executeUpdate();
-
-                    } else {
-
-                        rs.close();
-
-                    }
-
-                    pstmt.close();
-
-                }
-
             } catch (SQLException e) {
-                System.out.println("SQL 구문 오류");
+                System.out.println("게시글 삭제 SQL 구문 오류");
             } finally {
                 pstmt.close();
             }
         } else {
             rs.close();
             pstmt.close();
+        }
+
+        /* 댓글 삭제 */
+        sql = "select count(*) as num from comment where author = ?";
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, id);
+        rs = pstmt.executeQuery();
+
+        if(rs.next()) {
+
+            rs.close();
+            pstmt.close();
+
+            try {
+                sql = "delete from comment where author = ?";
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setString(1, id);
+                pstmt.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println("댓글 삭제 SQL 구문 오류");
+            } finally {
+                pstmt.close();
+            }
+
+        } else {
+
+            rs.close();
+            pstmt.close();
+
         }
 
         /* 문의 삭제 */
@@ -95,7 +96,7 @@
                 cnt = pstmt.executeUpdate();
 
             } catch (SQLException e) {
-                System.out.println("SQL 구문 오류");
+                System.out.println("문의 삭제 SQL 구문 오류");
             } finally {
                 pstmt.close();
             }
@@ -112,7 +113,7 @@
             if(adminYn) {
                 response.sendRedirect(request.getContextPath() + "/admin/memberList.jsp");
             } else {
-                response.sendRedirect(request.getContextPath() + "/member/logout.jsp");
+                response.sendRedirect(request.getContextPath() + "/member/logoutPro.jsp");
             }
         } else {
             out.println("<script>alert('탈퇴 처리를 진행하지 못했습니다.');history.go(-1);</script>");

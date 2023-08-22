@@ -53,14 +53,14 @@
         <%@ include file="../layout/header.jsp" %>
     </header>
     <div class="contents">
-        <div class="sub_visual visual03">
+        <div class="sub_visual visual05">
             <div class="inner">
                 <h2>마이페이지</h2>
             </div>
         </div>
         <div class="inner">
             <div class="breadcrumb">
-                <p><a href="<%=path %>/"> HOME </a> &gt; <a href="javascript:return false"> 마이페이지 </a> &gt; <span> 나의 문의내역 </span></p>
+                <p><a href="<%=path %>/"> HOME </a> &gt; <a href="<%=path %>/member/mypage.jsp"> 마이페이지 </a> &gt; <span> 나의 문의내역 </span></p>
             </div>
             <div class="content_wrap">
                 <h3>나의 문의내역 수정하기</h3>

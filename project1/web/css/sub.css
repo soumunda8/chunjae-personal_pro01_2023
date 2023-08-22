@@ -14,7 +14,7 @@
 
 #myTable_length, #dataTables_filter { margin-top:20px; margin-bottom:20px; }
 
-.content_wrap {margin:30px 0 60px;}
+.content_wrap {padding:30px 0 60px;}
 .content_wrap h3 {text-align:center;font-size:32px;margin-bottom:60px;line-height:1.2;}
 .content_wrap h4, .h4 {position:relative;font-size:22px;padding-left:16px;line-height:1.2;margin:45px 0 10px;}
 .content_wrap h4:before, .h4:before {position:absolute;content:"";display:block;width:12px;height:12px;box-sizing:border-box;border:4px solid var(--main-color);border-radius:50%;left:0;top:50%;margin-top:-6px;}
@@ -31,14 +31,14 @@
 .board_detail_top .board_title {font-size:25px;font-weight:600;line-height:42px;width:calc(100% - 150px);display:block;}
 .board_detail_top .cnt {font-size:20px;top:10px;}
 .board_detail_top .writer {font-size:20px;margin:5px 0 0;width:calc(100% - 200px);display:block;}
-.board_detail_con {margin:20px 0;padding:0 10px;font-size:20px;line-height: 1.2;}
+.board_detail_con {margin:20px 0;padding:0 10px;font-size:20px;line-height:1.2;}
 
 /* 자유게시판 댓글 관련 */
 .comment_area {width:100%;margin-top:50px;}
 .comment_list > li {border-bottom:1px solid #333;box-sizing:border-box}
 .comment_list > li:first-child {border-top:1px solid #333;}
 .comment_list > li > div {position:relative;}
-.comment_list .comment_top {padding:5px 10px;height: 25px;}
+.comment_list .comment_top {padding:5px 10px;height:25px;}
 .comment_list .comment_writer {font-weight:500;font-size:14px;line-height:25px;}
 .comment_list .comment_date {font-weight:300;padding-left:20px;}
 .comment_list .comment_btn {position:absolute;right:10px;top:50%;padding:0 10px;height:30px;line-height:28px;}
@@ -114,3 +114,38 @@
 .qna_answer.no_answer {padding-bottom:20px;}
 .qna_answer .qna_info {position:relative;padding-bottom:20px;}
 .qna_answer .qna_info span {font-size:14px;line-height:18px;}
+.tab_area {margin-bottom:40px;}
+.tab_area ul {width:60%;margin:0 auto;}
+.tab_area li {display:inline-block;width:50%;margin-left:-4px;box-sizing:border-box;border-bottom:1px solid #333;text-align:center;border-top-left-radius:10px;border-top-right-radius:10px;background-color:#fff;}
+.tab_area li a {display:block;padding:10px 0;font-size:20px;}
+.tab_area li:first-child {margin-left:0;}
+.tab_area li.on {border:1px solid var(--main-color);background-color:var(--main-color);}
+.tab_area li.on a {color:#fff;}
+
+.qna_list li {padding-top:8px;line-height:2;border-top:2px solid #333;border-bottom:1px solid #333;margin-bottom:40px;}
+.qna_list li:last-child {margin-bottom:0;}
+.qna_list li .que {cursor:pointer;padding-bottom:8px;}
+.qna_list li .que:after {content:"▼";padding-left:36px;}
+.qna_list li .que.on:after {content:"▲";}
+.qna_list li .ans {padding:16px;background-color:#f1f1f1;display:none;}
+
+.content_wrap .history {font-size:26px;margin:0 0 40px;}
+.list_history > li {position:relative;padding-left:40px;box-sizing:border-box;}
+.list_history > li:before {position:absolute;content:"";display:block;left:0;top:4px;width:16px;height:16px;background-color:var(--main-color);border-radius:50%;}
+.list_history > li:after {position:absolute;content:"";display:block;left:6px;top:6px;width:4px;height:100%;background-color:var(--main-color);opacity:0.4;}
+.list_history > li:last-child:after {content:none;}
+.list_history li .year_tit {font-size:22px;font-weight:600;display:inline-block;vertical-align:top;}
+.list_history li .month_con {display:inline-block;vertical-align:top;margin-left:40px;}
+.list_history li .month_con .month_tit {font-style:normal;font-size:20px;font-weight:500;display:inline-block;vertical-align:top;}
+.list_history li .month_con .date_list {display:inline-block;vertical-align:top;margin-left:40px;margin-bottom:20px;}
+.list_history li .month_con .date_list li {line-height:1.2;font-size:18px;padding-bottom:10px;}
+
+.intro .logo {text-align:center;font-family:'Barriecito', cursive;font-size:28px;vertical-align:middle;line-height:24px;margin-bottom:20px;}
+.intro .logo > span {font-family:inherit;}
+.intro_con {font-size:20px;word-break:keep-all;line-height:1.5;}
+.intro_con p {margin-bottom:20px;}
+.intro_con ul {padding-left:24px;margin-top:20px;}
+.intro_con li {list-style:disc;}
+
+.online {text-align:center}
+.online > img {margin:0 0 40px;width:240px;height:auto;}

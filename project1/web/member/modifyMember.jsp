@@ -35,7 +35,11 @@
         con.close(rs, pstmt, conn);
     }
 
-    String originPw = mem.getPw() != null ? AES256.decryptAES256(mem.getPw(), "%02x") : "";
+    String originPw = AES256.decryptAES256(mem.getPw(), "%02x");
+    String rePw = originPw.substring(0, 2);
+    for(int i = 0; i < originPw.length()-2; i++){
+        rePw += "*";
+    }
 
 %>
 <!DOCTYPE html>
@@ -62,49 +66,39 @@
             </div>
             <div class="content_wrap">
                 <h3>마이페이지</h3>
-                <div class="tab_area">
-                    <ul>
-                        <li class="on"><a href="javascript:return false">마이페이지</a></li>
-                        <li><a href="<%=path %>/qna/listQna.jsp">나의 문의내역</a></li>
-                    </ul>
-                </div>
-                <table class="table tb2">
-                <tbody>
-                    <tr>
-                        <th>아이디</th>
-                        <td><%=mem.getId() %></td>
-                    </tr>
-                    <tr>
-                        <th>비밀번호</th>
-                        <td>
-                            <% if(!originPw.equals("")) { %>
-                            <%=originPw.substring(0, 2) %>
-                            <% for(int i=0;i<originPw.length()-2;i++) { out.print("*"); } %>
-                            <% } %>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>이름</th>
-                        <td><%=mem.getName() %></td>
-                    </tr>
-                    <tr>
-                        <th>전화번호</th>
-                        <td><%=mem.getTel() %></td>
-                    </tr>
-                    <tr>
-                        <th>이메일</th>
-                        <td><%=mem.getEmail() %></td>
-                    </tr>
-                    <tr>
-                        <th>포인트</th>
-                        <td><%=mem.getPoint() %></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="btn_group txt_right">
-                    <a href="<%=path %>/member/modifyMember.jsp" class="inBtn inBtn1">정보 수정</a>
-                    <a href="<%=path %>/member/removeMemberPro.jsp?id=<%=mem.getId() %>" class="inBtn inBtn2">회원 탈퇴</a>
-                </div>
+                <form action="<%=path %>/member/modifyMemberPro.jsp" method="post">
+                    <table class="table tb2">
+                        <tbody>
+                        <tr>
+                            <th><label for="id">아이디</label></th>
+                            <td><input type="text" name="id" id="id" class="inData" value="<%=mem.getId() %>" readonly></td>
+                        </tr>
+                        <tr>
+                            <th><label for="rePw">비밀번호</label></th>
+                            <td>
+                                <input type="text" value="<%=rePw %>" name="rePw" id="rePw" class="inData" required>
+                                <input type="hidden" value="<%=rePw %>" name="pwCk" id="pwCk" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="name">이름</label></th>
+                            <td><input type="text" name="name" id="name" class="inData" value="<%=mem.getName() %>" readonly></td>
+                        </tr>
+                        <tr>
+                            <th><label for="tel">전화번호</label></th>
+                            <td><input type="text" value="<%=mem.getTel() %>" name="tel" id="tel" class="inData" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="email">이메일</label></th>
+                            <td><input type="text" value="<%=mem.getEmail() %>" name="email" id="email" class="inData" required></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="btn_group txt_right">
+                        <input type="submit" class="inBtn inBtn1" value="수정하기">
+                        <a href="<%=path %>/member/mypage.jsp" class="inBtn inBtn1">취소하기</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

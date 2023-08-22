@@ -7,6 +7,7 @@
 
     int bno = Integer.parseInt(request.getParameter("bno"));
     String writer = session.getAttribute("sid") != null ? (String) session.getAttribute("sid") : "";
+    boolean commentYn = request.getParameter("comment") != null;
 
     int cnt = 0;
     String sql = "";
@@ -21,7 +22,6 @@
 
     try {
 
-        // 공지사항 글 가져오는 쿼리문
         sql = "select * from boardList where bno = ?";
         pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, bno);
@@ -38,11 +38,8 @@
         rs.close();
         pstmt.close();
 
-<<<<<<< HEAD
-        if(!writer.equals("admin") && !bd.getAuthor().equals(writer)) {
-=======
-        if(!bd.getAuthor().equals(writer)) {
->>>>>>> origin/master
+        if(!writer.equals("admin") && !bd.getAuthor().equals(writer) && !commentYn) {
+
             // 조회수 증가 쿼리
             sql = "update board set cnt = cnt + 1 where bno = ?";
             pstmt = conn.prepareStatement(sql);
@@ -57,12 +54,6 @@
         }
     } catch (SQLException e) {
         System.out.println("sql 구문 오류");
-    } finally {
-<<<<<<< HEAD
-        conn.close();
-=======
-        //conn.close();
->>>>>>> origin/master
     }
 
 %>
@@ -86,7 +77,7 @@
         </div>
         <div class="inner">
             <div class="breadcrumb">
-                <p><a href="<%=path %>/"> HOME </a> &gt; <a href="javascript:return false"> 자격증 </a> &gt; <span> 자유게시판 </span></p>
+                <p><a href="<%=path %>/"> HOME </a> &gt; <a href="<%=path %>/license01.jsp"> 자격증 </a> &gt; <span> 자유게시판 </span></p>
             </div>
             <div class="content_wrap">
                 <h3>자유게시판 상세보기</h3>

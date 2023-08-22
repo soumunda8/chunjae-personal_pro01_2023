@@ -25,7 +25,7 @@
         } else {
             System.out.println("삭제실패");
         }
-        response.sendRedirect(request.getContextPath() + "/board/getBoard.jsp?bno="+bno);
+        response.sendRedirect(request.getContextPath() + "/board/getBoard.jsp?bno="+bno+"&comment=change");
     } catch (SQLException e) {
         System.out.println("SQL 구문 오류");
     } finally {

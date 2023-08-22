@@ -99,14 +99,14 @@
                     <td class="date dt-center"><%=dateStr %></td>
                     <td class="dt-center">
                         <% if(qna.isAnsweryn()) { %>
-                        <a class="table_btn finish" href="javascript:return false">답변완료</a>
+                        <a class="table_btn finish" href="<%=adminPath %>/qnaModifyAnswer.jsp?qno=<%=qna.getQno() %>">답변완료</a>
                         <% } else { %>
                         <a class="table_btn" href="<%=adminPath %>/qnaModifyAnswer.jsp?qno=<%=qna.getQno() %>">답변하기</a>
                         <% } %>
                     </td>
                 </tr>
                 <%  num++; } } else { %>
-                <tr><td class="dt-center" colspan="4">등록된 공지사항이 없습니다.</td></tr>
+                <tr><td class="dt-center" colspan="4">등록된 문의사항이 없습니다.</td></tr>
                 <% } %>
                 </tbody>
             </table>

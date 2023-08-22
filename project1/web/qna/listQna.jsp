@@ -73,17 +73,23 @@
         <%@ include file="../layout/header.jsp" %>
     </header>
     <div class="contents">
-        <div class="sub_visual visual03">
+        <div class="sub_visual visual05">
             <div class="inner">
                 <h2>마이페이지</h2>
             </div>
         </div>
         <div class="inner">
             <div class="breadcrumb">
-                <p><a href="<%=path %>/"> HOME </a> &gt; <a href="javascript:return false"> 마이페이지 </a> &gt; <span> 나의 문의내역 </span></p>
+                <p><a href="<%=path %>/"> HOME </a> &gt; <a href="<%=path %>/member/mypage.jsp"> 마이페이지 </a> &gt; <span> 나의 문의내역 </span></p>
             </div>
             <div class="content_wrap">
                 <h3>나의 문의내역</h3>
+                <div class="tab_area">
+                    <ul>
+                        <li><a href="<%=path %>/member/mypage.jsp">마이페이지</a></li>
+                        <li class="on"><a href="javascript:return false">나의 문의내역</a></li>
+                    </ul>
+                </div>
                 <table class="table tb1" id="<%=addId %>">
                     <colgroup>
                         <col style="width:8%;">
