@@ -44,10 +44,8 @@
 <script src="<%=path %>/js/jquery.dataTables.js"></script>
 
 <!-- 불펌 방지 -->
-<%--
 <script>
     document.oncontextmenu = function() { return false; }
     document.ondragstart = function() { return false; }
     document.onselectstart = function() { return false; }
 </script>
---%>
