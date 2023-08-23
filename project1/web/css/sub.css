@@ -76,6 +76,9 @@
 .join_content .inBtn.inBtn2 {margin:10px 0 0;}
 .join_content .input_area li {margin-top:10px;}
 .join_content .input_area li:first-child {margin-top:0;}
+.join_content.error h2 {text-align:left;font-size:32px;}
+.join_content.error p {font-size:20px;line-height:1.4;margin-bottom:20px;word-break:keep-all;}
+.join_content.error p > a {color:var(--main-color);text-decoration:underline;}
 .join_step {width:100%;text-align:justify;height:30px;margin-bottom:50px;}
 .join_step li {position:relative;transition:all 0.4s;display:inline-block;height:30px;font-size:15px;line-height:30px;padding-left:40px;}
 .join_step li i {display:block;position:absolute;left:0;top:0;border:2px solid var(--main-color);border-radius:100%;box-sizing:border-box;color:var(--main-color);font-style:inherit;font-weight:800;text-align:center;width:30px;height:30px;line-height:24px;}
@@ -121,6 +124,7 @@
 .tab_area li:first-child {margin-left:0;}
 .tab_area li.on {border:1px solid var(--main-color);background-color:var(--main-color);}
 .tab_area li.on a {color:#fff;}
+.sub_window {text-align:center;margin-top:100px;}
 
 .qna_list li {padding-top:8px;line-height:2;border-top:2px solid #333;border-bottom:1px solid #333;margin-bottom:40px;}
 .qna_list li:last-child {margin-bottom:0;}

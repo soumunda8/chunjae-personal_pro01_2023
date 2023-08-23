@@ -10,15 +10,16 @@
     <%@ include file="/layout/head.jsp" %>
     <link rel="stylesheet" href="<%=path %>/css/sub.css">
 </head>
-<style>
-
-</style>
 <body>
 <div class="container">
     <form action="<%=path %>/member/idLoad.jsp" method="post" name="child" onsubmit="return invalidCheck(this)">
-        <label for="id">아이디</label>
-        <input type="text" name="id" id="id" value="<%=id %>" placeholder="15글자 이내">
-        <input type="submit" value="아이디중복검사">
+        <div class="sub_window">
+            <label for="id" class="blind">아이디</label>
+            <input type="text" class="inData" name="id" id="id" value="<%=id %>" placeholder="아이디를 15글자 이내로 입력하세요.">
+        </div>
+        <div class="btn_group txt_center">
+            <input type="submit" class="inBtn inBtn1" value="아이디중복검사">
+        </div>
     </form>
     <script>
         function invalidCheck(f) {
