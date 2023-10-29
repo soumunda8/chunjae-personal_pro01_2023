@@ -35,3 +35,24 @@
 .board_con li:nth-child(4) {border-bottom:none;}
 .board_con li a {display:block;width:100%;line-height:28px;font-size:18px;padding:14px 0;}
 .board_con li .date {position:absolute;right:0;line-height:28px;font-size:16px;top:50%;margin-top:-14px;}
+
+/*모바일*/
+@media all and (max-width:768px) {
+}
+
+/* 태블릿 */
+@media all and (min-width:769px) and (max-width:1024px) {
+}
+
+@media all and (max-width:1024px) {
+}
+
+@media all and (min-width:1025px) {
+}
+
+@media all and (min-width:1025px) and (max-width:1199px) {
+}
+
+/* PC */
+@media all and (min-width:1200px) {
+}

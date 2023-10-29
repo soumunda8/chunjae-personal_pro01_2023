@@ -27,7 +27,7 @@ table {border-collapse:collapse;border-spacing:0;}
     --sub-color:#ffa300;
     --admin-color:#530009;
 }
-.inner {width:1200px;margin:0 auto;position:relative;}
+.inner {position:relative;}
 .clearfix::after {display:block;content:'';clear:both;}
 .blind {position:absolute;width:0;height:0;font-size:0;line-height:0;text-indent:-9999px;overflow:hidden;}
 
@@ -108,3 +108,36 @@ textarea.inData {min-height:150px;}
 
 /* contents */
 .contents {min-height:70vh;}
+
+/*모바일*/
+@media all and (max-width:768px) {
+    .inner {width:calc(100% - 20px);}
+}
+
+/* 태블릿 */
+@media all and (min-width:769px) and (max-width:1024px) {
+    .inner {width:calc(100% - 20px);}
+}
+
+@media all and (max-width:1024px) {
+
+    .inner {margin:0 10px;}
+    .forPc {display: none !important;;}
+
+}
+
+@media all and (min-width:1025px) {
+
+    .inner {margin:0 auto;}
+    .forMobile {display:none !important;;}
+
+}
+
+@media all and (min-width:1025px) and (max-width:1199px) {
+    .inner {width:1000px;}
+}
+
+/* PC */
+@media all and (min-width:1200px) {
+    .inner {width:1200px;}
+}
