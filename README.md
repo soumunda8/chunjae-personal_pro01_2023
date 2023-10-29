@@ -31,10 +31,10 @@
 ![ERD10](/readme/logicalerd.png)
 
 ### 물리적 설계(ERD 다이어그램)
-![ERD01](/readme/project03_erd1.png)
-![ERD02](/readme/project03_erd2.png)
-![ERD03](/readme/project03_erd3.png)
-![ERD04](/readme/project03_erd4.png)
+![ERD01](/readme/project01_erd1.png)
+![ERD02](/readme/project01_erd2.png)
+![ERD03](/readme/project01_erd3.png)
+![ERD04](/readme/project01_erd4.png)
 
 ### 클래스 다이어그램
 ![class01](/readme/class.png)
