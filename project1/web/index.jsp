@@ -61,6 +61,7 @@
     <title>플러스앤플러스에듀</title>
     <%@ include file="/layout/head.jsp" %>
     <link rel="stylesheet" href="<%=path %>/css/main.css">
+    <link rel="stylesheet" href="<%=path %>/css/response.css">
   </head>
   <body>
   <div class="wrap">

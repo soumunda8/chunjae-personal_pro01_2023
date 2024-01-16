@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+
+/*모바일*/
+@media all and (max-width:768px) {
+}
+
+/* 태블릿 */
+@media all and (max-width:1024px) {
+    .img_box li.item1 .vs_tit {display:none;}
+    .vs {min-height:300px;}
+    .img_box {height:300px;}
+    .img_box li .bg_box {height:300px;background-position:center bottom;}
+    .btn_box li .vs_btn, .play_btn {display:none;}
+
+    .board_lst > li {display:block;width:100%;margin-left:0;}
+
+    .footer .ft_list {width:100%;display:block;}
+    .footer .ft_logo {display:none;}
+}
+
+/* 태블릿 */
+@media all and (min-width:769px) and (max-width:1024px) {
+}
+
+@media all and (min-width:1025px) and (max-width:1199px) {
+    .board_lst > li {width:calc(45% - 24px)}
+}
+
+/* PC */
+@media all and (min-width:1200px) {
+}
